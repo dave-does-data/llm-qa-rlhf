@@ -1,1 +1,4 @@
-# Falcon7B-QA-RLHF
+# Learning Excercise
+## Fine Tuning LLM for QA Task
+
+## Futher Training LLM with RLHF
