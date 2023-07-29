@@ -57,6 +57,7 @@ class ScriptArguments:
     use_auth_token: Optional[bool] = field(default=True, metadata={"help": "Use HF auth token to access the model"})
     num_train_epochs: Optional[int] = field(default=3, metadata={"help": "the number of training epochs"})
     max_steps: Optional[int] = field(default=-1, metadata={"help": "the number of training steps"})
+    trained_model: Optional[Any] = field(default=None, init=False)  # add this line
 
 
 parser = HfArgumentParser(ScriptArguments)
@@ -121,3 +122,6 @@ trainer = SFTTrainer(
 )
 
 trainer.train()
+
+# Update the trained model in the script arguments
+script_args.trained_model = trainer.model
