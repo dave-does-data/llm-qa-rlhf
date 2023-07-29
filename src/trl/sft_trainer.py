@@ -122,6 +122,6 @@ trainer = SFTTrainer(
 )
 
 trainer.train()
-
+trainer.save_model("./curr_model") 
 # Update the trained model in the script arguments
 script_args.trained_model = trainer.model
